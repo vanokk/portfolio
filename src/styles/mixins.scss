@@ -1,0 +1,12 @@
+// Shared breakpoints for the desktop shell and narrow project rows.
+@mixin desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin narrow {
+  @media (max-width: 640px) {
+    @content;
+  }
+}

@@ -1,0 +1,21 @@
+.about {
+  margin-bottom: var(--section-spacing);
+  scroll-margin-top: 24px;
+
+  &__heading {
+    margin: 0 0 var(--section-heading-spacing);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+  }
+
+  &__paragraph {
+    margin: 0 0 16px;
+  }
+
+  &__highlight {
+    color: var(--strong);
+    font-weight: 500;
+  }
+}

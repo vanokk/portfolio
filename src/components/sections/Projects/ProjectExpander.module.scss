@@ -1,0 +1,69 @@
+.project-expander {
+  &__row {
+    display: grid;
+    // Keep a stable 1px footprint for collapsed rows.
+    min-height: 1px;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      grid-template-rows 0.6s cubic-bezier(0.2, 0.7, 0.2, 1),
+      opacity 0.5s ease,
+      visibility 0s 0.6s;
+  }
+
+  &__content {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  &--expanded &__row {
+    min-height: 0;
+    grid-template-rows: 1fr;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+    &:nth-child(2) {
+      transition-delay: 0.12s;
+    }
+    &:nth-child(3) {
+      transition-delay: 0.24s;
+    }
+    &:nth-child(4) {
+      transition-delay: 0.36s;
+    }
+  }
+
+  // Allow link focus outlines to extend beyond the row clipping boundary.
+  &--expanded &__content {
+    overflow: clip;
+    overflow-clip-margin: 5px;
+  }
+
+  &__button {
+    margin-top: 8px;
+    background: none;
+    border: 1px solid var(--line);
+    color: var(--strong);
+    font: inherit;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition:
+      color 0.2s,
+      border-color 0.2s;
+    &:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__row,
+    &--expanded &__row,
+    &__button {
+      transition: none;
+    }
+  }
+}

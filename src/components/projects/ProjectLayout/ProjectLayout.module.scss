@@ -1,0 +1,62 @@
+.project-layout {
+  max-width: 70ch;
+  margin-bottom: var(--section-spacing);
+
+  &__header {
+    margin-bottom: 32px;
+  }
+
+  &__back {
+    color: var(--accent);
+    font-size: 0.9rem;
+  }
+
+  &__category {
+    margin: 28px 0 0;
+    font: 0.8rem / 1.65 var(--font-mono);
+    color: var(--accent);
+  }
+
+  &__title {
+    margin: 28px 0 20px;
+    color: var(--strong);
+    font-size: clamp(2rem, 3.4vw, 2.6rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    overflow-wrap: anywhere;
+  }
+
+  &__description {
+    margin: 0;
+  }
+
+  &__metadata {
+    margin: 0 0 56px;
+    border-top: 1px solid var(--line);
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    @media (min-width: 640px) {
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 20px;
+      align-items: baseline;
+    }
+  }
+
+  &__label {
+    color: var(--muted);
+    font: 0.85rem / 1.65 var(--font-mono);
+  }
+
+  &__value {
+    margin: 0;
+    color: var(--strong);
+    font-size: 0.95rem;
+  }
+}

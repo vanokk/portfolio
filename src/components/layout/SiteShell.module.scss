@@ -1,0 +1,23 @@
+@use '../../styles/mixins';
+
+.site-shell {
+  max-width: var(--layout-stacked-max-width);
+  margin: 0 auto;
+  padding: 0 var(--layout-padding);
+
+  @include mixins.desktop {
+    display: grid;
+    grid-template-columns: var(--layout-sidebar-width) minmax(0, 1fr);
+    gap: var(--layout-column-gap);
+    max-width: var(--layout-max-width);
+  }
+
+  &__main {
+    min-width: 0;
+    padding: 72px 0 96px;
+
+    @include mixins.desktop {
+      padding: 96px 0 45px;
+    }
+  }
+}
