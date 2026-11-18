@@ -1,6 +1,8 @@
 @use '../../styles/mixins';
 
 .site-shell {
+  position: relative;
+  z-index: 1;
   max-width: var(--layout-stacked-max-width);
   margin: 0 auto;
   padding: 0 var(--layout-padding);

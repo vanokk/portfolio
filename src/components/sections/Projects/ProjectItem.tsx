@@ -9,7 +9,7 @@ export function ProjectItem({
   return (
     <Link
       href={`/projects/${project.slug}/`}
-      className={`${styles['project-item']}${first ? ` ${styles['project-item--first']}` : ''}`}
+      className={`hover-panel ${styles['project-item']}${first ? ` ${styles['project-item--first']}` : ''}`}
     >
       <div className={styles['project-item__preview']} aria-hidden="true">
         {project.image && (

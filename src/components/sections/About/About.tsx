@@ -5,7 +5,7 @@ export function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className={styles['about']}
+      className={`${styles['about']} hover-panel`}
     >
       <h2 id="about-heading" className={styles['about__heading']}>
         ABOUT

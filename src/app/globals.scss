@@ -48,3 +48,103 @@ select {
     transition-duration: 0s;
   }
 }
+
+#dots,
+#spot,
+#press {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-size: 24px 24px;
+  transition: opacity 0.25s ease;
+}
+
+#dots {
+  background-image: radial-gradient(var(--line) 1.2px, transparent 1.6px);
+  opacity: 0.2;
+}
+
+#spot {
+  background-image: radial-gradient(var(--accent) 1.4px, transparent 1.9px);
+  opacity: 0.45;
+  -webkit-mask-image: radial-gradient(
+    240px circle at var(--x, 50%) var(--y, 40%),
+    #000 0%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    240px circle at var(--x, 50%) var(--y, 40%),
+    #000 0%,
+    transparent 100%
+  );
+}
+
+#press {
+  background-image: radial-gradient(var(--accent) 2.8px, transparent 3.4px);
+  opacity: 0;
+  -webkit-mask-image: radial-gradient(
+    170px circle at var(--x, 50%) var(--y, 40%),
+    #000 0%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    170px circle at var(--x, 50%) var(--y, 40%),
+    #000 0%,
+    transparent 100%
+  );
+}
+
+body.pressed #dots {
+  opacity: 0.42;
+}
+body.pressed #spot {
+  opacity: 0.9;
+}
+body.pressed #press {
+  opacity: 0.85;
+}
+
+.hover-panel {
+  position: relative;
+  isolation: isolate;
+  border-radius: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: var(--hover-panel-top, -20px) -20px var(--hover-panel-bottom, -20px);
+    border-radius: 6px;
+    z-index: -1;
+    pointer-events: none;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+
+  @media (min-width: 1025px) and (hover: hover) and (pointer: fine) {
+    &:hover::before {
+      background-color: var(--panel);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::before {
+      transition: none;
+    }
+  }
+}
+
+@media (hover: none) {
+  #spot,
+  #press {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #dots,
+  #spot,
+  #press {
+    transition: none;
+  }
+}

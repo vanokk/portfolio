@@ -19,7 +19,10 @@ export function InfoRows({ id, title, rows }: Props) {
       </h2>
       <dl className={styles['info-rows__list']}>
         {rows.map(({ label, primary, secondary }) => (
-          <div key={`${label}-${primary}`} className={styles['info-rows__row']}>
+          <div
+            key={`${label}-${primary}`}
+            className={`${styles['info-rows__row']} hover-panel`}
+          >
             <dt className={styles['info-rows__label']}>{label}</dt>
             {secondary ? (
               <dd className={styles['info-rows__content']}>

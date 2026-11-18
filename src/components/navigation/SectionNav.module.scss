@@ -35,6 +35,7 @@
     &:hover,
     &:focus-visible {
       color: var(--accent);
+      font-weight: 600;
     }
     &:hover::before,
     &:focus-visible::before,

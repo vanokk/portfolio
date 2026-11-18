@@ -12,15 +12,15 @@
 
   &__list {
     margin: 0;
-    border-top: 1px solid var(--line);
   }
 
   &__row {
+    --hover-panel-top: -6px;
+    --hover-panel-bottom: -6px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 4px;
     padding: 14px 0;
-    border-bottom: 1px solid var(--line);
 
     @media (min-width: 640px) {
       grid-template-columns: 150px 1fr;

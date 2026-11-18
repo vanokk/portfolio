@@ -5,7 +5,7 @@ export function ExperienceItem({
   position,
 }: Readonly<{ position: ExperienceRecord }>) {
   return (
-    <article className={styles['experience-item']}>
+    <article className={`${styles['experience-item']} hover-panel`}>
       <div className={styles['experience-item__dates']}>{position.dates}</div>
       <div>
         <h3 className={styles['experience-item__title']}>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { siteMetadata } from '@/lib/site-metadata';
 import { themeInitScript } from '@/components/theme/theme-init';
+import { DotBackground } from '@/components/DotBackground';
 import './globals.scss';
 
 export const metadata: Metadata = siteMetadata;
@@ -25,7 +26,10 @@ export default function RootLayout({
         />
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body>{children}</body>
+      <body>
+        <DotBackground />
+        {children}
+      </body>
     </html>
   );
 }
