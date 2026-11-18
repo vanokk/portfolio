@@ -1,12 +1,10 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import { siteMetadata } from '@/lib/site-metadata';
 import { themeInitScript } from '@/components/theme/theme-init';
 import './globals.scss';
 
-export const metadata: Metadata = {
-  title: 'Ivan Reshevskyi — Senior Frontend / Full-Stack Engineer',
-  description: 'Ivan Reshevskyi — Senior Frontend / Full-Stack Engineer.',
-};
+export const metadata: Metadata = siteMetadata;
 
 export default function RootLayout({
   children,

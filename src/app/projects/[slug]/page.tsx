@@ -17,7 +17,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProject((await params).slug);
   if (!project) notFound();
-  return createProjectMetadata(project, process.env.NEXT_PUBLIC_SITE_URL);
+  return createProjectMetadata(project);
 }
 
 export default async function ProjectPage({ params }: Props) {
