@@ -7,24 +7,31 @@
   padding-top: 24px;
   border-top: 1px solid var(--line);
 
+  &__suffix {
+    @media (width < 375px) {
+      display: none;
+    }
+  }
+
   &__link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: 44px;
     padding: 8px 16px;
-    border: 1px solid var(--line);
+    border: 1px solid var(--accent);
     border-radius: 6px;
-    color: var(--strong);
+    background-color: var(--accent);
+    color: var(--bg);
     font-size: 0.9rem;
     transition:
-      color 0.2s,
+      background-color 0.2s,
       border-color 0.2s;
 
     &:hover,
     &:focus-visible {
-      color: var(--accent);
-      border-color: var(--accent);
+      background-color: color-mix(in srgb, var(--accent) 85%, var(--strong));
+      border-color: color-mix(in srgb, var(--accent) 85%, var(--strong));
     }
 
     &--next {

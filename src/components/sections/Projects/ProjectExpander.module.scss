@@ -34,28 +34,29 @@
     }
   }
 
-  // Allow link focus outlines to extend beyond the row clipping boundary.
+  // Allow hover panels and focus outlines beyond the row clipping boundary.
   &--expanded &__content {
     overflow: clip;
-    overflow-clip-margin: 5px;
+    overflow-clip-margin: 20px;
   }
 
   &__button {
     margin-top: 8px;
-    background: none;
-    border: 1px solid var(--line);
-    color: var(--strong);
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+    color: var(--bg);
     font: inherit;
     font-size: 0.9rem;
     padding: 8px 16px;
     border-radius: 6px;
     cursor: pointer;
     transition:
-      color 0.2s,
+      background-color 0.2s,
       border-color 0.2s;
-    &:hover {
-      color: var(--accent);
-      border-color: var(--accent);
+    &:hover,
+    &:focus-visible {
+      background-color: color-mix(in srgb, var(--accent) 85%, var(--strong));
+      border-color: color-mix(in srgb, var(--accent) 85%, var(--strong));
     }
   }
 

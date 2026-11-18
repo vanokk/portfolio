@@ -15,8 +15,12 @@ export function ProjectNavigation({ slug }: Readonly<{ slug: string }>) {
           className={styles['project-navigation__link']}
           href={`/projects/${neighbors.previous.slug}/`}
           rel="prev"
+          aria-label="Previous project"
         >
-          Previous project
+          Previous
+          <span className={styles['project-navigation__suffix']}>
+            &nbsp;project
+          </span>
         </Link>
       )}
       {neighbors.next && (
@@ -24,8 +28,12 @@ export function ProjectNavigation({ slug }: Readonly<{ slug: string }>) {
           className={`${styles['project-navigation__link']} ${styles['project-navigation__link--next']}`}
           href={`/projects/${neighbors.next.slug}/`}
           rel="next"
+          aria-label="Next project"
         >
-          Next project
+          Next
+          <span className={styles['project-navigation__suffix']}>
+            &nbsp;project
+          </span>
         </Link>
       )}
     </nav>

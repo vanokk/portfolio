@@ -21,6 +21,8 @@ export function SocialLinks() {
       <a
         className={styles['social-links__link']}
         href="https://www.linkedin.com/in/ivan-reshevskyi-2639b6a8/"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
         aria-label="LinkedIn"
       >
         <svg
@@ -37,6 +39,8 @@ export function SocialLinks() {
       <a
         className={styles['social-links__link']}
         href="https://github.com/vanokk"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
         aria-label="GitHub"
       >
         <svg
@@ -51,6 +55,8 @@ export function SocialLinks() {
       <a
         className={styles['social-links__link']}
         href="https://www.instagram.com/ivanreshevskii/"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
         aria-label="Instagram"
       >
         <svg
