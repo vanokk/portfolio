@@ -7,8 +7,10 @@ export function SiteShell({
   projectPage = false,
 }: Readonly<{ children: ReactNode; projectPage?: boolean }>) {
   return (
-    <div className={styles['site-shell']}>
-      <Sidebar projectPage={projectPage} />
+    <div
+      className={`${styles['site-shell']}${projectPage ? ` ${styles['site-shell--project']}` : ''}`}
+    >
+      {!projectPage && <Sidebar />}
       <main
         className={styles['site-shell__main']}
         aria-label={projectPage ? 'Project case study' : 'Portfolio'}

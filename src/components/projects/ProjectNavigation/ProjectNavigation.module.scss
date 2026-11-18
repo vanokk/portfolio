@@ -1,37 +1,38 @@
 .project-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
   margin-top: 64px;
   padding-top: 24px;
   border-top: 1px solid var(--line);
 
-  &__back {
-    color: var(--accent);
-    font-size: 0.9rem;
-  }
-
-  &__neighbors {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-top: 28px;
-    @media (min-width: 640px) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
   &__link {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px 16px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
     color: var(--strong);
-  }
+    font-size: 0.9rem;
+    transition:
+      color 0.2s,
+      border-color 0.2s;
 
-  &__link:hover {
-    color: var(--accent);
-  }
+    &:hover,
+    &:focus-visible {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
 
-  &__label {
-    font: 0.8rem / 1.65 var(--font-mono);
-    color: var(--muted);
+    &--next {
+      margin-left: auto;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
   }
 }

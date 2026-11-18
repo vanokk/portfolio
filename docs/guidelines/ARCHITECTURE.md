@@ -19,8 +19,8 @@ Functional requirements, stack, and project constraints are defined in
 - `src/app/projects/[slug]/page.tsx` renders project pages.
 - Derive `generateStaticParams()` from `src/data/projects.ts` and disable dynamic
   parameters so unsupported slugs do not generate pages.
-- Use Next.js Link for internal navigation. Shared sidebar links on project
-  pages target homepage anchors such as `/#about` and `/#projects`.
+- Use Next.js Link for internal navigation. Project pages use the shared shell
+  without a sidebar; Back to Projects targets `/#projects`.
 - Generate page metadata with static-compatible APIs. Canonical URLs require a
   configured production origin.
 

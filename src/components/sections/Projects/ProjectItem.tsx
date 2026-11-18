@@ -11,12 +11,28 @@ export function ProjectItem({
       href={`/projects/${project.slug}/`}
       className={`${styles['project-item']}${first ? ` ${styles['project-item--first']}` : ''}`}
     >
-      <div className={styles['project-item__preview']} aria-hidden="true" />
+      <div className={styles['project-item__preview']} aria-hidden="true">
+        {project.image && (
+          // The linked title already names the project; the artwork is decorative.
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            className={styles['project-item__image']}
+            src={project.image}
+            alt=""
+            loading="lazy"
+          />
+        )}
+      </div>
       <div>
         <h3 className={styles['project-item__title']}>{project.title}</h3>
         <p className={styles['project-item__description']}>
           {project.description}
         </p>
+        {project.duration && (
+          <p className={styles['project-item__duration']}>
+            Duration: {project.duration}
+          </p>
+        )}
         <div className={styles['project-item__technologies']}>
           {project.technologies.join(' • ')}
         </div>

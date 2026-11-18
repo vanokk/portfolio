@@ -166,8 +166,11 @@ Use around `0.2–0.6s` transitions for links and expandable project rows.
 
 Use a consistent editorial layout for all case-study pages.
 
-- Reuse the existing site identity and left sidebar when appropriate.
+- Use a centered single content column without a sidebar. Keep the theme toggle
+  alongside the top Back to Projects link.
 - Preserve typography, colors, link interactions, and content widths.
-- Back and previous/next navigation use the same link styling as the rest of the site.
+- Keep Back to Projects at the top. Bottom navigation uses outlined Previous
+  project and Next project buttons without adjacent project titles. Use the shared
+  text, border, accent hover, and focus colors.
 - Maintain clear visual hierarchy between the page title, metadata, headings, and body text.
 - Keep body text narrower if needed for readability.

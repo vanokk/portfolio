@@ -12,6 +12,15 @@
     max-width: var(--layout-max-width);
   }
 
+  &--project {
+    max-width: var(--layout-stacked-max-width);
+
+    @include mixins.desktop {
+      display: block;
+      max-width: var(--layout-stacked-max-width);
+    }
+  }
+
   &__main {
     min-width: 0;
     padding: 72px 0 96px;

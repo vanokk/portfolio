@@ -25,6 +25,14 @@
     background: var(--panel);
     border: 1px solid var(--line);
     border-radius: 6px;
+    overflow: hidden;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   &__title {
@@ -44,6 +52,12 @@
   &__technologies {
     font-size: 0.85rem;
     color: var(--accent);
+  }
+
+  &__duration {
+    margin: 0 0 10px;
+    font: 0.8rem / 1.65 var(--font-mono);
+    color: var(--muted);
   }
 
   &:hover &__title,

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Project } from '@/data/projects';
 import { SiteShell } from '@/components/layout/SiteShell';
 import { Footer } from '@/components/layout/Footer';
+import { ThemeToggle } from '@/components/theme/ThemeToggle';
 import { ProjectNavigation } from '../ProjectNavigation/ProjectNavigation';
 import { CaseStudyImage } from '../mdx-elements';
 import contentStyles from '../ProjectContent.module.scss';
@@ -19,9 +20,12 @@ export function ProjectLayout({
         aria-labelledby="project-title"
       >
         <header className={styles['project-layout__header']}>
-          <Link className={styles['project-layout__back']} href="/#projects">
-            Back to Projects
-          </Link>
+          <div className={styles['project-layout__controls']}>
+            <Link className={styles['project-layout__back']} href="/#projects">
+              Back to Projects
+            </Link>
+            <ThemeToggle />
+          </div>
           {project.category && (
             <p className={styles['project-layout__category']}>
               {project.category}
@@ -30,34 +34,18 @@ export function ProjectLayout({
           <h1 id="project-title" className={styles['project-layout__title']}>
             {project.title}
           </h1>
-          <p className={styles['project-layout__description']}>
-            {project.description}
-          </p>
-        </header>
-        <dl className={styles['project-layout__metadata']}>
           {project.role && (
-            <div className={styles['project-layout__row']}>
-              <dt className={styles['project-layout__label']}>Role</dt>
-              <dd className={styles['project-layout__value']}>
-                {project.role}
-              </dd>
-            </div>
+            <p className={styles['project-layout__role']}>{project.role}</p>
           )}
           {project.duration && (
-            <div className={styles['project-layout__row']}>
-              <dt className={styles['project-layout__label']}>Duration</dt>
-              <dd className={styles['project-layout__value']}>
-                {project.duration}
-              </dd>
-            </div>
+            <p className={styles['project-layout__duration']}>
+              Duration: {project.duration}
+            </p>
           )}
-          <div className={styles['project-layout__row']}>
-            <dt className={styles['project-layout__label']}>Technologies</dt>
-            <dd className={styles['project-layout__value']}>
-              {project.technologies.join(' • ')}
-            </dd>
-          </div>
-        </dl>
+          <p className={styles['project-layout__technologies']}>
+            {project.technologies.join(' • ')}
+          </p>
+        </header>
         {project.image && project.imageAlt && (
           <CaseStudyImage src={project.image} alt={project.imageAlt} />
         )}

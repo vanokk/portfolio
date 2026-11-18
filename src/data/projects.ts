@@ -11,7 +11,7 @@ export interface Project {
   readonly duration?: string;
 }
 
-// Approved homepage content in its original display order. Images are not supplied.
+// Approved project metadata in its original display order.
 export const projects = [
   {
     slug: 'international-money-transfer-platform',
@@ -19,6 +19,11 @@ export const projects = [
     description:
       'Cross-border money transfers, onboarding, wallets and payment processing.',
     technologies: ['Vue.js', 'Nuxt.js', 'PHP', 'Symfony', 'Java'],
+    role: 'Senior Full-Stack Engineer',
+    duration: '7.5 years',
+    image: '/images/projects/international-money-transfer-platform.webp',
+    imageAlt:
+      'Anonymized money transfer interface mockup with obscured amounts',
     order: 1,
   },
   {
