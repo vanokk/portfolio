@@ -50,6 +50,19 @@ export function ProjectLayout({
           <CaseStudyImage src={project.image} alt={project.imageAlt} />
         )}
         <div className={contentStyles['case-content']}>{children}</div>
+        <aside
+          className={styles['project-layout__confidentiality']}
+          aria-label="Confidentiality Notice"
+        >
+          <p className={styles['project-layout__notice-title']}>
+            <strong>Confidentiality Notice</strong>
+          </p>
+          <p className={styles['project-layout__notice-text']}>
+            This project is subject to confidentiality restrictions. The visuals
+            shown are conceptual representations created for portfolio purposes
+            and do not reflect the actual product interface.
+          </p>
+        </aside>
         <ProjectNavigation slug={project.slug} />
       </article>
       <Footer />

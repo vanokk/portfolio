@@ -31,15 +31,25 @@ export const projects = [
     title: 'Project management tool',
     description:
       'Internal tool for managing tasks, project boards, sprints and team workflows.',
-    technologies: ['React', 'Redux', 'TypeScript', 'Node.js', 'NestJS'],
+    technologies: ['React', 'Redux-Saga', 'TailwindCSS', 'WebSocket'],
+    role: 'Full-Stack Engineer',
+    duration: '3 months',
+    image: '/images/projects/project-management-tool.webp',
+    imageAlt:
+      'Project management dashboard with a task board and sprint charts',
     order: 2,
   },
   {
     slug: 'german-utility-payment-platform',
-    title: 'German utility payment platform',
+    title: 'German Utility Payment Platform',
     description:
       'Web application for paying utility bills in Germany, with responsive UI and localization.',
     technologies: ['React', 'Redux', 'Bootstrap'],
+    role: 'React Developer',
+    duration: '4 months',
+    image: '/images/projects/german-utility-payment-platform.webp',
+    imageAlt:
+      'Utility dashboard showing bills, payments, and consumption charts',
     order: 3,
   },
   {
